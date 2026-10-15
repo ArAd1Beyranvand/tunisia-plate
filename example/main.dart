@@ -15,7 +15,7 @@ class ExampleApp extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: PlateCanvas(
-              spec: TunisiaPlates.standard(),
+              spec: TunisiaPlates.standard,
               theme: TunisiaThemes.standard,
               validator: const TunisiaValidator(),
               autoValidate: true,
