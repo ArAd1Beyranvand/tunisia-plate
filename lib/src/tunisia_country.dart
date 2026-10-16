@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:plate_core/plate_core.dart';
 
 import 'tunisia_colors.dart';
@@ -5,15 +6,19 @@ import 'tunisia_colors.dart';
 /// No plate prints a country block (the military flag is a decal), so every
 /// spec sets `noPanel`; the flag is carried for hosts that list countries.
 abstract final class TunisiaCountry {
+  static const PlateDrawing _flag = PlateDrawing(120, 80, <PlateShape>[
+    PlateRectShape(0, 0, 120, 80, Color(0xFFE70013)),
+    PlateCircleShape(60, 40, 20, Color(0xFFFFFFFF)),
+    PlateCrescentShape(60, 40, 15, 4, 12, Color(0xFFE70013)),
+    PlateStarShape(64, 40, 9, Color(0xFFE70013), rotation: 270),
+  ]);
+
   static const PlateCountry tunisia = PlateCountry(
     code: 'tn',
     captionLines: <String>[],
     panelColor: TunisiaColors.flagRed,
     panelTextColor: TunisiaColors.white,
     flagAspectRatio: 3 / 2,
-    flag: SvgPlateAsset(
-      'assets/flags/Flag_of_Tunisia.svg',
-      package: 'tunisia_plate',
-    ),
+    flag: _flag,
   );
 }

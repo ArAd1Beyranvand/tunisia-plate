@@ -254,6 +254,14 @@ class TunisiaSuffix {
 /// shows an undocumented format), the pre-1975 series, and the sticker on the
 /// military photo. Screw holes are not printed.
 abstract final class TunisiaPlates {
+  /// The flag cropped to the disc, as the military plate prints it.
+  static const PlateDrawing _militaryFlag = PlateDrawing(55.2, 46.9, <PlateShape>[
+    PlateRectShape(0, 0, 55.2, 46.9, Color(0xFFE70013)),
+    PlateCircleShape(27.6, 23.45, 20, Color(0xFFFFFFFF)),
+    PlateCrescentShape(27.6, 23.45, 15, 4, 12, Color(0xFFE70013)),
+    PlateStarShape(31.6, 23.45, 9, Color(0xFFE70013), rotation: 270),
+  ]);
+
   static final Map<TunisiaMission, PlateSpec> _diplomatic =
       <TunisiaMission, PlateSpec>{};
   static final Map<TunisiaSuffix, PlateSpec> _temporary =
@@ -489,13 +497,7 @@ abstract final class TunisiaPlates {
       centre: _Layout.milCentre,
     ),
     decals: const <PlateDecal>[
-      PlateDecal(
-        image: AssetImage(
-          'assets/tn_military_flag.png',
-          package: 'tunisia_plate',
-        ),
-        box: _Layout.milFlag,
-      ),
+      PlateDecal(drawing: _militaryFlag, box: _Layout.milFlag),
     ],
   );
 
