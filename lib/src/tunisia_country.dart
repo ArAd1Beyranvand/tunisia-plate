@@ -2,9 +2,8 @@ import 'package:plate_core/plate_core.dart';
 
 import 'tunisia_colors.dart';
 
-/// Tunisia as a `PlateCountry`. No Tunisian plate prints a country block —
-/// the military plate's flag is a decal on the spec — so every spec sets
-/// `noPanel` and this carries the flag only for hosts that list countries.
+/// No plate prints a country block (the military flag is a decal), so every
+/// spec sets `noPanel`; the flag is carried for hosts that list countries.
 abstract final class TunisiaCountry {
   static const PlateCountry tunisia = PlateCountry(
     code: 'tn',

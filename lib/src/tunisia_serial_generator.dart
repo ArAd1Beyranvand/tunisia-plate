@@ -2,11 +2,9 @@ import 'dart:math';
 
 import 'package:plate_core/plate_core.dart';
 
-/// Generates plausible values for fixtures and demos. Pure Dart.
-///
 /// Fills every digit slot of any `TunisiaPlates` spec. A `series` group has no
-/// leading zero and, at three digits, is drawn from the 2008–2026 series the
-/// article lists (131–261); a diplomatic `serial` is never `00`.
+/// leading zero and, at three digits, is drawn from the 2008-2026 series
+/// (131-261); other groups are never all zeros. Pure Dart.
 abstract final class TunisiaSerialGenerator {
   static List<String?> generate(PlateSpec spec, {Random? random}) {
     final Random rnd = random ?? Random();
