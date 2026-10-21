@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:plate_core/plate_core.dart';
 
 import 'tunisia_alphabets.dart';
+import 'tunisia_colors.dart';
 import 'tunisia_country.dart';
 
 /// Ink positions in millimetres, measured from photographs (no artwork
@@ -255,12 +256,13 @@ class TunisiaSuffix {
 /// military photo. Screw holes are not printed.
 abstract final class TunisiaPlates {
   /// The flag cropped to the disc, as the military plate prints it.
-  static const PlateDrawing _militaryFlag = PlateDrawing(55.2, 46.9, <PlateShape>[
-    PlateRectShape(0, 0, 55.2, 46.9, Color(0xFFE70013)),
-    PlateCircleShape(27.6, 23.45, 20, Color(0xFFFFFFFF)),
-    PlateCrescentShape(27.6, 23.45, 15, 4, 12, Color(0xFFE70013)),
-    PlateStarShape(31.6, 23.45, 9, Color(0xFFE70013), rotation: 270),
-  ]);
+  static const PlateDrawing _militaryFlag =
+      PlateDrawing(55.2, 46.9, <PlateShape>[
+        PlateRectShape(0, 0, 55.2, 46.9, TunisiaColors.flagRed),
+        PlateCircleShape(27.6, 23.45, 20, Color(0xFFFFFFFF)),
+        PlateCrescentShape(27.6, 23.45, 15, 4, 12, TunisiaColors.flagRed),
+        PlateStarShape(31.6, 23.45, 9, TunisiaColors.flagRed, rotation: 270),
+      ]);
 
   static final Map<TunisiaMission, PlateSpec> _diplomatic =
       <TunisiaMission, PlateSpec>{};
