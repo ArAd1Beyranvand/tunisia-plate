@@ -1,7 +1,7 @@
 name: tunisia_plate
 description: "Tunisia's licence plates for plate_core: one- and two-line, rental, government, diplomatic, military and temporary plates, with themes, alphabets and validators."
 version: 0.1.0
-repository: https://github.com/ArAd1Beyranvand/tunisia-plate
+repository: https://github.com/ArAd1Beyranvand/tunisia-plate/tree/main/flutter
 resolution: workspace
 
 environment:
